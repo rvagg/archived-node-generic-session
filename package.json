@@ -1,0 +1,29 @@
+{
+    "name"            : "generic-session"
+  , "description"     : "A generic web server session manager for use with any storage back-end"
+  , "version"         : "0.0.0"
+  , "homepage"        : "https://github.com/rvagg/node-generic-session"
+  , "authors"         : [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+    ]
+  , "keywords"        : [ "session", "sessions" ]
+  , "main"            : "./lib/index.js"
+  , "repository"      : {
+        "type"            : "git"
+      , "url"             : "https://github.com/rvagg/node-generic-session.git"
+    }
+  , "dependencies" : {
+        "cookies"     : "~0.3.6"
+    }
+  , "optionalDependencies" : {
+        "keygrip"     : "~0.2.2"
+    }
+  , "devDependencies" : {
+        "tap"         : "*"
+      , "request"     : "~2.12.0"
+    }
+  , "scripts": {
+        "test"            : "tap ./tests/*-test.js"
+    }
+  , "license"             : "MIT"
+}
