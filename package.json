@@ -1,7 +1,7 @@
 {
     "name"            : "generic-session"
   , "description"     : "A generic web server session manager for use with any storage back-end"
-  , "version"         : "0.0.0"
+  , "version"         : "0.0.1"
   , "homepage"        : "https://github.com/rvagg/node-generic-session"
   , "authors"         : [
         "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"

@@ -153,22 +153,22 @@ Deletes all data for the current session in the session store and will also remo
 GenericSession needs somewhere to store session data! It's bundled with a `MemoryStore` (see above) but you are advised to not use it in production. When creating a GenericSession object, you should provide a compatible store that conforms to the following API. Note, it's fairly easy to wrap your favourite store/db in this API. All operations are asynchronous and a `callback` will always provided (except for `extend()`), even if the client doesn't provide one:
 
 ### store.get(id, key, expire, callback)
-Return the value of `key` for the session identified by `id`, also update the expires time to `expire` (a `Date` object).
+Return the value of `key` for the session identified by `id`, also update the expires time to `expire` seconds from now.
 
 -------------------------
 
 ### store.getAll(id, expire, callback)
-Return the an object representing all values set for the session identified by `id`, also update the expires time to `expire` (a `Date` object).
+Return the an object representing all values set for the session identified by `id`, also update the expires time to `expire` seconds from now.
 
 -------------------------
 
 ### store.set(id, key, value, expire, callback)
-Set `key` to be equal to `value` for the session identified by `id`, also update the expires time to `expire` (a `Date` object).
+Set `key` to be equal to `value` for the session identified by `id`, also update the expires time to `expire` seconds from now.
 
 -------------------------
 
 ### store.del(id, key, expire, callback)
-Delete the property `key` from the session identified by `id`, also update the expires time to `expire` (a `Date` object).
+Delete the property `key` from the session identified by `id`, also update the expires time to `expire` seconds from now.
 
 -------------------------
 
@@ -176,6 +176,9 @@ Delete the property `key` from the session identified by `id`, also update the e
 Delete all values for the session identified by `id`.
 
 -------------------------
+
+### store.extend(id, expire)
+Update the expiry time to `expire` seconds from now for the the session identified by `id`.
 
 ## Licence
 
