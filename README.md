@@ -70,7 +70,7 @@ This example is available in the *examples/* directory.
 ### genericSession(request, response, store[, options])
 Will create a new `GenericSession` for the given HTTP `request` and `response` objects against the compatible `store` object (see Store API below).
 
-GenericSession uses *Cookies*(https://github.com/jed/cookies) to keep track of the session by attaching a random session id cookie to the `response` and fetching it from the `request`. Cookies can be optionally signed using *Keygrip*(https://github.com/jed/keygrip).
+GenericSession uses [Cookies](https://github.com/jed/cookies) to keep track of the session by attaching a random session id cookie to the `response` and fetching it from the `request`. Cookies can be optionally signed using [Keygrip](https://github.com/jed/keygrip).
 
 #### Options:
 
@@ -89,8 +89,15 @@ Returns a standard framework filter / middleware, i.e. a function with the signa
 
 -------------------------
 
-### genericSession.MemoryStore()
-A simple MemoryStore that implements the Store API (see below). Only meant for dev/example purposes, ideally a session store would be persistent and also capable of operating across multiple servers. Currently doesn't support proper timeouts (pull requests accepted!)
+### genericSession.MemoryStore([ options ])
+
+***Don't use this in production.*** *This is only meant for example & testing purposes.*
+
+A simple MemoryStore that implements the Store API (see below). Ideally a session store would be persistent and also capable of operating across multiple servers.
+
+MemoryStore is backed by [lru-cache](https://github.com/isaacs/node-lru-cache) which is an optional dependency so it needs to be installed if you want to use this.
+
+MemoryStore takes an optional `options` object that can be used to override the default `cache` settings for `max` and `maxAge` (e.g. provide `{ cache: { maxAge: 1000 * 60 * 60 } }`). Note that MemoryStore will ignore the `expire` option from Generic Store and will obey the `maxAge` cache option. The default is 2-weeks to match the Generic Store defaults.
 
 -------------------------
 
