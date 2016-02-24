@@ -16,7 +16,8 @@
     "url": "https://github.com/rvagg/node-generic-session.git"
   },
   "dependencies": {
-    "cookies": "~0.5.1"
+    "cookies": "~0.5.1",
+    "xtend": "~4.0.1"
   },
   "optionalDependencies": {
     "keygrip": "~1.0.1",

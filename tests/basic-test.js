@@ -3,7 +3,7 @@ const tap            = require('tap')
 
 // stubs
 const req   = { headers: {}, connection: { encrypted: false } }
-    , res   = { getHeader: function () {}, set: true, setHeader: function () {} }
+    , res   = { getHeader: function () {}, setHeader: function () {} }
 
 tap.test('.middleware as alias for .filter', function (t) {
   t.plan(1)
