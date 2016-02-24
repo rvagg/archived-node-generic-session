@@ -16,15 +16,15 @@
     "url": "https://github.com/rvagg/node-generic-session.git"
   },
   "dependencies": {
-    "cookies": "~0.3.6"
+    "cookies": "~0.5.1"
   },
   "optionalDependencies": {
-    "keygrip": "~0.2.2",
-    "lru-cache": "~2.2.1"
+    "keygrip": "~1.0.1",
+    "lru-cache": "~4.0.0"
   },
   "devDependencies": {
-    "tap": "*",
-    "request": "~2.12.0"
+    "request": "~2.69.0",
+    "tap": "~5.7.0"
   },
   "scripts": {
     "test": "tap ./tests/*-test.js"
